@@ -24,12 +24,19 @@
         <action
             android:id="@+id/action_teamsFragment_to_footballDetailsFragment22"
             app:destination="@id/footballDetailsFragment" />
+        <argument
+            android:name="leagueId"
+            app:argType="integer" />
     </fragment>
     <fragment
         android:id="@+id/footballDetailsFragment"
         android:name="com.example.footballdataapp.ui.FootballDetailsFragment"
         android:label="fragment_football_details"
         tools:layout="@layout/fragment_football_details"
-        />
+        >
+        <argument
+            android:name="teamId"
+            app:argType="integer" />
+    </fragment>
 
 </navigation>

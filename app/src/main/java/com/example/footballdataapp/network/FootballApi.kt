@@ -1,7 +1,7 @@
 package com.example.footballdataapp.network
 
 import com.example.footballdataapp.data.CompetitionDataClass
-import com.example.footballdataapp.data.Teams
+import com.example.footballdataapp.data.TeamsDataClass.Teams
 import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Header

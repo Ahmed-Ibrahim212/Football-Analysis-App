@@ -2,7 +2,7 @@ package com.example.footballdataapp.repository
 
 import com.example.footballdataapp.data.Competition
 import com.example.footballdataapp.data.CompetitionDataClass
-import com.example.footballdataapp.data.Teams
+import com.example.footballdataapp.data.TeamsDataClass.Teams
 import com.example.footballdataapp.data.local.TeamsDatabase
 import com.example.footballdataapp.network.FootballApi
 import retrofit2.Response

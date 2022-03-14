@@ -6,15 +6,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.footballanalysis.utils.Resource
-import com.example.footballdataapp.R
-import com.example.footballdataapp.adapter.FootBallListAdapter
 import com.example.footballdataapp.adapter.FootballDetailsAdapter
-import com.example.footballdataapp.data.Competition
 import com.example.footballdataapp.data.Squad
-import com.example.footballdataapp.data.Teams
 import com.example.footballdataapp.databinding.FragmentFootballDetailsBinding
 import com.example.footballdataapp.viewmodel.FootballDetailsViewModel
 import dagger.hilt.android.AndroidEntryPoint
@@ -24,6 +21,7 @@ class FootballDetailsFragment : Fragment() {
     private lateinit var footballDetailsAdapter: FootballDetailsAdapter
     private var _binding: FragmentFootballDetailsBinding? = null
     private val binding get() = _binding!!
+    private val args : FootballDetailsFragmentArgs by navArgs()
     private val viewModel: FootballDetailsViewModel by viewModels()
     private lateinit var recyclerView: RecyclerView
 
@@ -39,6 +37,7 @@ class FootballDetailsFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        val teamId = args.teamId
         recyclerView = binding.detailsRecyclerView
         observers()
         viewModel.getUserResponse(teamId)

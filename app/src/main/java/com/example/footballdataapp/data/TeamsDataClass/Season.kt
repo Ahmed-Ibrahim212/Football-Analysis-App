@@ -1,4 +1,4 @@
-package com.olamachia.simpleblogappwithdatabinding.models.dataclasses.Fish
+package com.example.footballdataapp.data.TeamsDataClass
 
 data class Season(
     val currentMatchday: Int,

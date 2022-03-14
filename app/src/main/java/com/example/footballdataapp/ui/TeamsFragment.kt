@@ -13,7 +13,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.footballanalysis.utils.Resource
 import com.example.footballdataapp.R
 import com.example.footballdataapp.adapter.TeamListAdapter
-import com.example.footballdataapp.data.Teams
+import com.example.footballdataapp.data.TeamsDataClass.Team
 import com.example.footballdataapp.databinding.FragmentTeamsBinding
 import com.example.footballdataapp.viewmodel.TeamsViewModel
 import com.google.android.material.snackbar.Snackbar
@@ -43,7 +43,7 @@ class TeamsFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        leagueId = args.competitionId
+        leagueId = args.leagueId
         recyclerView = binding.teamsRecyclerView
         viewModel.fetchLeagueImage(leagueId)
         observers()
@@ -57,7 +57,7 @@ class TeamsFragment : Fragment() {
                     it.data?.let {
                         Log.d("userResponse", it.toString())
                         binding.teamsProgressBar.visibility = View.INVISIBLE
-                        setUpRecyclerView(it)
+                        setUpRecyclerView(it.teams)
                     }
                 }
                 is Resource.Error -> {
@@ -71,7 +71,7 @@ class TeamsFragment : Fragment() {
         }
     }
 
-    private fun setUpRecyclerView(list: Teams) {
+    private fun setUpRecyclerView(list: List<Team>) {
         recyclerView.layoutManager = GridLayoutManager(requireContext(), 3)
         teamListAdapter = TeamListAdapter(list)
         recyclerView.adapter = teamListAdapter

@@ -1,6 +1,7 @@
 package com.example.footballdataapp.data.TeamsDataClass
 
-import com.olamachia.simpleblogappwithdatabinding.models.dataclasses.Fish.AreaX
+import com.example.footballdataapp.data.AreaX
+
 
 data class Team(
     val address: String,
