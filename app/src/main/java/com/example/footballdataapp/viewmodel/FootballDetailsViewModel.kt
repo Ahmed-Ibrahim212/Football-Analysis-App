@@ -8,6 +8,7 @@ import com.example.footballanalysis.utils.Resource
 import com.example.footballdataapp.data.CompetitionDataClass
 import com.example.footballdataapp.data.Teams
 import com.example.footballdataapp.network.NetworkConstants
+import com.example.footballdataapp.network.NetworkConstants.Companion.TOKEN
 import com.example.footballdataapp.repository.AuthRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
@@ -20,10 +21,10 @@ class FootballDetailsViewModel@Inject constructor(private val authRepository: Au
     private var _userResponse = MutableLiveData<Resource<Teams>>()
     val userResponse: LiveData<Resource<Teams>> get() = _userResponse
 
-    fun getUserResponse(){
+    fun getUserResponse(teamId: Int){
         _userResponse.value = Resource.Loading()
         viewModelScope.launch(Dispatchers.IO) {
-            val profileData = authRepository.getTeams(NetworkConstants.TOKEN)
+            val profileData = authRepository.getTeams(TOKEN, teamId)
             _userResponse.postValue(handleUserData(profileData))
         }
     }

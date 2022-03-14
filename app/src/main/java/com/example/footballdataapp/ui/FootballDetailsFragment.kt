@@ -36,11 +36,12 @@ class FootballDetailsFragment : Fragment() {
         return binding.root
     }
 
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         recyclerView = binding.detailsRecyclerView
         observers()
-        viewModel.getUserResponse()
+        viewModel.getUserResponse(teamId)
     }
 
     private fun observers() {

@@ -1,9 +1,7 @@
 package com.example.footballdataapp.network
 
-import androidx.lifecycle.LiveData
-import androidx.room.Query
 import com.example.footballdataapp.data.CompetitionDataClass
-import com.olamachia.simpleblogappwithdatabinding.models.dataclasses.Fish.Teams
+import com.example.footballdataapp.data.Teams
 import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Header
@@ -21,9 +19,10 @@ interface FootballApi {
         @Path("leagueId") leagueId:Int
     ):Response<Teams>
 
-    @GET("teams/674")
+    @GET("teams")
     suspend fun getTeamsDetails(
         @Header("X-Auth-Token") token: String,
+        @Path ("teamId") teamId: Int
     ):Response<Teams>
 }
 

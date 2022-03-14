@@ -14,11 +14,12 @@ class FootballDetailsAdapter(private var list: List<Squad>) :
     inner class MyViewHolder(binding: FootballDetailsRecyclerviewBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
-        fun bind(squad: Squad) {
+        fun bind(squad: Squad){
             user.text = squad.position
             users.text = squad.nationality
             date.text = squad.dateOfBirth
             first.text = squad.name
+
 
         }
 

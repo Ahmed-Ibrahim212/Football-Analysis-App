@@ -17,7 +17,7 @@ class FootBallListAdapter(private var list: List<Competition>) :
         RecyclerView.ViewHolder(binding.root) {
 
 
-        fun bind(competition: Competition) = with(itemView){
+        fun bind(competition: Competition) =with(itemView){
             user.text = competition.name
             first.text = competition.currentSeason.startDate
             users.text = competition.area.name

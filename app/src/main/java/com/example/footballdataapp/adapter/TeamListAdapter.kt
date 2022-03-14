@@ -3,10 +3,12 @@ package com.example.footballdataapp.adapter
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.ImageView
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.footballdataapp.databinding.TeamListRecyclerviewBinding
 import com.example.footballdataapp.data.TeamsDataClass.Team
+import com.example.footballdataapp.ui.TeamsFragmentDirections
 
 class TeamListAdapter(private var list: List<Team>) :
     RecyclerView.Adapter<TeamListAdapter.TeamViewHolder>() {
@@ -15,6 +17,10 @@ class TeamListAdapter(private var list: List<Team>) :
 
         fun bind(team: Team) = with(itemView) {
             Glide.with(context).load(team.crestUrl).into(user)
+            itemView.setOnClickListener {
+                val direction = TeamsFragmentDirections.actionTeamsFragmentToFootballDetailsFragment22()
+                itemView.findNavController().navigate(direction)
+            }
         }
 
         var user: ImageView = binding.teamsImage

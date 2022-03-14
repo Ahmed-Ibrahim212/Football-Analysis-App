@@ -21,9 +21,15 @@
         android:label="fragment_teams"
         tools:layout="@layout/fragment_teams" >
 
-        <argument
-            android:name="competitionId"
-            app:argType="integer" />
+        <action
+            android:id="@+id/action_teamsFragment_to_footballDetailsFragment22"
+            app:destination="@id/footballDetailsFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/footballDetailsFragment"
+        android:name="com.example.footballdataapp.ui.FootballDetailsFragment"
+        android:label="fragment_football_details"
+        tools:layout="@layout/fragment_football_details"
+        />
 
 </navigation>
