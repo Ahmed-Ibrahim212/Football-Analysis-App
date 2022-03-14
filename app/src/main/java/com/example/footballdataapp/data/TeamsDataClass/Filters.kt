@@ -1,0 +1,3 @@
+package com.olamachia.simpleblogappwithdatabinding.models.dataclasses.Fish
+
+class Filters

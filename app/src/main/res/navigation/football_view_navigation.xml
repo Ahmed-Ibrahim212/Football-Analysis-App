@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/football_view_navigation"
+    app:startDestination="@id/footballDataFragment">
+
+    <fragment
+        android:id="@+id/footballDataFragment"
+        android:name="com.example.footballdataapp.ui.FootballDataFragment"
+        android:label="FootballDataFragment"
+        tools:layout="@layout/fragment_football_data">
+        <action
+            android:id="@+id/action_footballDataFragment_to_teamsFragment"
+            app:destination="@id/teamsFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/teamsFragment"
+        android:name="com.example.footballdataapp.ui.TeamsFragment"
+        android:label="fragment_teams"
+        tools:layout="@layout/fragment_teams" >
+
+        <argument
+            android:name="competitionId"
+            app:argType="integer" />
+    </fragment>
+
+</navigation>

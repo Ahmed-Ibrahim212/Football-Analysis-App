@@ -1,0 +1,18 @@
+package com.example.footballdataapp.data
+
+import androidx.room.Entity
+import androidx.room.PrimaryKey
+
+@Entity (tableName = "teamsImage")
+data class Competition(
+    val area: Area,
+    val code: String,
+    val currentSeason: CurrentSeason,
+    val emblemUrl: String,
+    @PrimaryKey
+    val id: Int,
+    val lastUpdated: String,
+    val name: String,
+    val numberOfAvailableSeasons: Int,
+    val plan: String
+)
