@@ -13,6 +13,8 @@ import com.example.footballdataapp.R
 import com.example.footballdataapp.adapter.FootBallListAdapter
 import com.example.footballdataapp.adapter.FootballDetailsAdapter
 import com.example.footballdataapp.data.Competition
+import com.example.footballdataapp.data.Squad
+import com.example.footballdataapp.data.Teams
 import com.example.footballdataapp.databinding.FragmentFootballDetailsBinding
 import com.example.footballdataapp.viewmodel.FootballDetailsViewModel
 import dagger.hilt.android.AndroidEntryPoint
@@ -47,7 +49,7 @@ class FootballDetailsFragment : Fragment() {
                 is Resource.Success -> {
                     it.data?.let {
                         binding.footballDetailsProgressBar.visibility = View.INVISIBLE
-                        setUpRecyclerView(it.competitions)
+                        setUpRecyclerView(it.squad)
                     }
 
                 }
@@ -62,7 +64,7 @@ class FootballDetailsFragment : Fragment() {
         }
     }
 
-    private fun setUpRecyclerView(list: List<Competition>) {
+    private fun setUpRecyclerView(list: List<Squad>) {
         recyclerView.layoutManager = GridLayoutManager(requireContext(), 3)
         footballDetailsAdapter = FootballDetailsAdapter(list)
         recyclerView.adapter = footballDetailsAdapter

@@ -1,10 +1,9 @@
-package com.example.footballdataapp.data.TeamsDataClass
+package com.example.footballdataapp.data
 
-import com.olamachia.simpleblogappwithdatabinding.models.dataclasses.Fish.AreaX
-
-data class Team(
+data class Teams(
+    val activeCompetitions: List<ActiveCompetition>,
     val address: String,
-    val area: AreaX,
+    val area: AreaXX,
     val clubColors: String,
     val crestUrl: String,
     val email: String,
@@ -14,6 +13,7 @@ data class Team(
     val name: String,
     val phone: String,
     val shortName: String,
+    val squad: List<Squad>,
     val tla: String,
     val venue: String,
     val website: String

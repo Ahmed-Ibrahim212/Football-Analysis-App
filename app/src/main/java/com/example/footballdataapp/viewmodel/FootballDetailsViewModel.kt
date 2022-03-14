@@ -6,6 +6,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.footballanalysis.utils.Resource
 import com.example.footballdataapp.data.CompetitionDataClass
+import com.example.footballdataapp.data.Teams
 import com.example.footballdataapp.network.NetworkConstants
 import com.example.footballdataapp.repository.AuthRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -16,17 +17,17 @@ import javax.inject.Inject
 
 @HiltViewModel
 class FootballDetailsViewModel@Inject constructor(private val authRepository: AuthRepository): ViewModel() {
-    private var _userResponse = MutableLiveData<Resource<CompetitionDataClass>>()
-    val userResponse: LiveData<Resource<CompetitionDataClass>> get() = _userResponse
+    private var _userResponse = MutableLiveData<Resource<Teams>>()
+    val userResponse: LiveData<Resource<Teams>> get() = _userResponse
 
     fun getUserResponse(){
         _userResponse.value = Resource.Loading()
         viewModelScope.launch(Dispatchers.IO) {
-            val profileData = authRepository.getMatches(NetworkConstants.TOKEN)
+            val profileData = authRepository.getTeams(NetworkConstants.TOKEN)
             _userResponse.postValue(handleUserData(profileData))
         }
     }
-    private fun handleUserData(userData: Response<CompetitionDataClass>): Resource<CompetitionDataClass> {
+    private fun handleUserData(userData: Response<Teams>): Resource<Teams> {
         if (userData.isSuccessful) {
             userData.body()?.let { data ->
                 return Resource.Success(data)

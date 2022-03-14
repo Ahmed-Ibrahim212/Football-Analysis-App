@@ -6,7 +6,7 @@ import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.footballdataapp.databinding.TeamListRecyclerviewBinding
-import com.olamachia.simpleblogappwithdatabinding.models.dataclasses.Fish.Team
+import com.example.footballdataapp.data.TeamsDataClass.Team
 
 class TeamListAdapter(private var list: List<Team>) :
     RecyclerView.Adapter<TeamListAdapter.TeamViewHolder>() {

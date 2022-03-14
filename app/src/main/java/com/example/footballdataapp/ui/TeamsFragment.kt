@@ -16,7 +16,7 @@ import com.example.footballdataapp.adapter.TeamListAdapter
 import com.example.footballdataapp.databinding.FragmentTeamsBinding
 import com.example.footballdataapp.viewmodel.TeamsViewModel
 import com.google.android.material.snackbar.Snackbar
-import com.olamachia.simpleblogappwithdatabinding.models.dataclasses.Fish.Team
+import com.example.footballdataapp.data.TeamsDataClass.Team
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

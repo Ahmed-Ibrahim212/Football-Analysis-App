@@ -1,6 +1,7 @@
 package com.olamachia.simpleblogappwithdatabinding.models.dataclasses.Fish
 
 import com.example.footballdataapp.data.TeamsDataClass.Competition
+import com.example.footballdataapp.data.TeamsDataClass.Team
 
 
 data class Teams(

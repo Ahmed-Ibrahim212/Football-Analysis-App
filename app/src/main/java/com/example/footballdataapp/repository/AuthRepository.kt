@@ -22,4 +22,8 @@ class AuthRepository@Inject constructor(private val api: FootballApi, private va
     suspend fun insertImage(competition: Competition) = teamsDatabase.getTeamsDao().insert(competition)
 
     fun getCompetitionsData(): List<Competition> = teamsDatabase.getTeamsDao().getCompetitons()
+
+    suspend fun getTeams(token:String): Response<Teams> {
+        return api.getTeamsDetails(token)
+    }
 }

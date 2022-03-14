@@ -21,5 +21,9 @@ interface FootballApi {
         @Path("leagueId") leagueId:Int
     ):Response<Teams>
 
+    @GET("teams/674")
+    suspend fun getTeamsDetails(
+        @Header("X-Auth-Token") token: String,
+    ):Response<Teams>
 }
 
