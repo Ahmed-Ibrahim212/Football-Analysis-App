@@ -5,9 +5,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.footballdataapp.data.Squad
-import com.example.footballdataapp.data.Teams
 import com.example.footballdataapp.databinding.FootballDetailsRecyclerviewBinding
-import com.example.footballdataapp.data.TeamsDataClass.Team
 
 class FootballDetailsAdapter(private var list: List<Squad>) :
     RecyclerView.Adapter<FootballDetailsAdapter.MyViewHolder>() {

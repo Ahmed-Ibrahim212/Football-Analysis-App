@@ -1,7 +1,7 @@
 package com.example.footballdataapp.network
 
 import com.example.footballdataapp.data.CompetitionDataClass
-import com.example.footballdataapp.data.TeamsDataClass.Teams
+import com.example.footballdataapp.data.SingleTeams
 import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Header
@@ -17,12 +17,12 @@ interface FootballApi {
     suspend fun getTeams(
         @Header("X-Auth-Token") token: String,
         @Path("leagueId") leagueId:Int
-    ):Response<Teams>
+    ):Response<com.example.footballdataapp.data.TeamsDataClass.SingleTeams>
 
     @GET("teams")
     suspend fun getTeamsDetails(
         @Header("X-Auth-Token") token: String,
         @Path ("teamId") teamId: Int
-    ):Response<Teams>
+    ):Response<SingleTeams>
 }
 

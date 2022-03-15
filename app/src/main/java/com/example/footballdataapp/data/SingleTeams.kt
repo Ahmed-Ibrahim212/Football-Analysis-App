@@ -1,6 +1,6 @@
 package com.example.footballdataapp.data
 
-data class Teams(
+data class SingleTeams(
     val activeCompetitions: List<ActiveCompetition>,
     val address: String,
     val area: AreaXX,
