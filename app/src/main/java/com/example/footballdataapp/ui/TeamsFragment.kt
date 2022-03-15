@@ -45,7 +45,7 @@ class TeamsFragment : Fragment() {
 
         leagueId = args.leagueId
         recyclerView = binding.teamsRecyclerView
-        viewModel.fetchLeagueImage(leagueId)
+        viewModel.fetchLeagueImage(2003)
         observers()
     }
 

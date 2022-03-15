@@ -18,7 +18,7 @@ class TeamListAdapter(private var list: List<Team>) :
         fun bind(team: Team) = with(itemView) {
             Glide.with(context).load(team.crestUrl).into(user)
             itemView.setOnClickListener {
-                val direction = TeamsFragmentDirections.actionTeamsFragmentToFootballDetailsFragment22()
+                val direction = TeamsFragmentDirections.actionTeamsFragmentToFootballDetailsFragment22(team.id)
                 itemView.findNavController().navigate(direction)
             }
         }

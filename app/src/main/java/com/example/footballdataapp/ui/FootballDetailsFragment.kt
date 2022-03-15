@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.footballanalysis.utils.Resource
 import com.example.footballdataapp.adapter.FootballDetailsAdapter
@@ -65,7 +66,7 @@ class FootballDetailsFragment : Fragment() {
     }
 
     private fun setUpRecyclerView(list: List<Squad>) {
-        recyclerView.layoutManager = GridLayoutManager(requireContext(), 3)
+        recyclerView.layoutManager = LinearLayoutManager(requireContext())
         footballDetailsAdapter = FootballDetailsAdapter(list)
         recyclerView.adapter = footballDetailsAdapter
     }

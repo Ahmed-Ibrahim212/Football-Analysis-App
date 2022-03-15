@@ -5,9 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.footballanalysis.utils.Resource
-import com.example.footballdataapp.data.CompetitionDataClass
-import com.example.footballdataapp.data.Teams
-import com.example.footballdataapp.network.NetworkConstants
+import com.example.footballdataapp.data.TeamsDataClass.Teams
 import com.example.footballdataapp.network.NetworkConstants.Companion.TOKEN
 import com.example.footballdataapp.repository.AuthRepository
 import dagger.hilt.android.lifecycle.HiltViewModel

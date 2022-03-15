@@ -3,7 +3,6 @@ package com.example.footballdataapp.di
 import android.content.Context
 import androidx.room.Room
 import com.example.footballdataapp.data.local.TeamsDatabase
-import com.olamachia.simpleblogappwithdatabinding.models.dataclasses.Fish.Teams
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
